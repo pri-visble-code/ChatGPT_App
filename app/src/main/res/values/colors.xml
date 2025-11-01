@@ -11,5 +11,6 @@
 
     <color name="back_color">#363342</color>
     <color name="edt_back_color">#414051</color>
+    <color name="user_message_bubble_color">#004D40</color>
 
 </resources>

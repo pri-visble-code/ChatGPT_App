@@ -4,6 +4,20 @@
 
 This is an Android app built in Kotlin that allows users to send questions and get responses using the OpenAI GPT-3 API.
 
+## Solution
+
+The previous version of this app had a few limitations:
+
+*   **No Chat History:** The app didn't save the conversation, so you couldn't see previous messages.
+*   **No Image Support:** The app only supported text-based conversations.
+*   **Paid API:** The app used the paid OpenAI API.
+
+I have upgraded the app to address these issues:
+
+*   **Chat History:** The app now displays the full conversation history in a `RecyclerView`.
+*   **Image Attachments:** You can now attach images to your messages.
+*   **Free and Fast AI:** The app now uses the Groq API, which is free and provides much faster responses.
+
 ## Getting Started
 ### Full tutorial on Youtube: https://youtu.be/bLktoOzb4R0
 ### Prerequisites
@@ -12,9 +26,17 @@ To run this app, you need Android Studio installed on your computer.
 ### Installation
 - Clone this repository.
 - Open the project in Android Studio.
-- Obtain an API key from OpenAI: https://platform.openai.com/account/api-keys
-- replace YOUR_API_KEY in the MainActivity.kt file with your actual API key.
 - Build and run the app on your device or emulator.
+
+### Testing
+
+To run the tests, you can use the following Gradle command:
+
+```
+./gradlew test
+```
+
+This will run the `MainActivityTest.kt` test file, which verifies that the image attachment functionality is working correctly.
 
 ## Screenshots
 
@@ -32,6 +54,7 @@ width="200"
 - Kotlin - Programming language used.
 - XML - Layout language used.
 - OkHttp - HTTP client for making API calls.
+- Robolectric - For testing Android functionality.
 
 ## Authors
 [Shivank Verma](https://www.linkedin.com/in/shivank8/)
