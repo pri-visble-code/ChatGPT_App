@@ -128,7 +128,8 @@ class MainActivity : AppCompatActivity() {
         rvChat.scrollToPosition(conversationHistory.length() - 1)
         etQuestion.setText("")
 
-        val apiKey = "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"
+        // you can on on groq site and get free api key and place below. link : https://console.groq.com/keys
+        val apiKey = "YOUR_GROQ_API_KEY"
         val url = "https://api.groq.com/openai/v1/chat/completions"
 
         val requestBody = JSONObject().apply {

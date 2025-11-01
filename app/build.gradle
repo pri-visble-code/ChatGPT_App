@@ -3,6 +3,15 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+// Read the local.properties file
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { stream ->
+        localProperties.load(stream)
+    }
+}
+
 android {
     namespace 'com.example.chatgptapp'
     compileSdk 33
@@ -15,6 +24,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Make the API key available in the BuildConfig class
+        buildConfigField "String", "GROQ_API_KEY", "\"${localProperties.getProperty('GROQ_API_KEY', '')}\""
     }
 
     buildTypes {
